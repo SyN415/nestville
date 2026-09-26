@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nestville</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="view"></canvas>
+
+    <div id="hud" class="hidden">
+      <div class="who">
+        <div id="hudName">—</div>
+        <div id="hudMeta" class="meta"></div>
+      </div>
+      <div class="meters">
+        <label>Hunger <i id="mHunger"></i></label>
+        <label>Energy <i id="mEnergy"></i></label>
+        <label>Happy <i id="mHappy"></i></label>
+        <label>Clean <i id="mClean"></i></label>
+      </div>
+      <div id="coins">12✦</div>
+    </div>
+
+    <div id="prompt" class="hidden"></div>
+    <div id="toasts"></div>
+
+    <div id="dock" class="hidden">
+      <button data-act="feed">Feed</button>
+      <button data-act="parkPlay">Play</button>
+      <button data-act="clean">Bathe</button>
+      <button data-act="sleep">Sleep</button>
+      <button data-act="cuddle">Cuddle</button>
+      <button data-act="profile">Profile</button>
+    </div>
+
+    <section id="title" class="screen">
+      <div class="hero">
+        <p class="eyebrow">a little city for little lives</p>
+        <h1>Nestville</h1>
+        <p class="tag">Raise unique creatures. Walk them through town. Every step is theirs.</p>
+        <div class="row">
+          <button id="btnNew" class="primary">New creature</button>
+          <button id="btnContinue" class="ghost hidden">Continue</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="select" class="screen hidden">
+      <div class="panel wide">
+        <h2>Who arrives today?</h2>
+        <p class="tag">Eggs hatch. Mammals are welcomed in a cozy den. Bounce inflates from a marble.</p>
+        <div id="roster" class="roster"></div>
+        <button id="btnBackTitle" class="ghost">Back</button>
+      </div>
+    </section>
+
+    <section id="birth" class="screen hidden">
+      <div class="birth-card">
+        <div id="birthRoom" class="eyebrow"></div>
+        <canvas id="birthCanvas" width="520" height="280"></canvas>
+        <h2 id="birthTitle"></h2>
+        <p id="birthCopy"></p>
+        <div id="birthActions"></div>
+      </div>
+    </section>
+
+    <section id="modal" class="screen hidden">
+      <div class="panel" id="modalBody"></div>
+    </section>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/systems.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
